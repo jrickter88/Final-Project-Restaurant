@@ -66,6 +66,7 @@
     <ClInclude Include="sandwich.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="useAppetizer.cpp" />
     <ClCompile Include="useBeverage.cpp" />
     <ClCompile Include="useSalad.cpp" />

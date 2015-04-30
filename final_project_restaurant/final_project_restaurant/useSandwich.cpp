@@ -54,10 +54,14 @@ void sandwich::print() const
 	string t[] = {"Philly steak", "Stacked corn beef", "Chicken sandwich", "Reuben", "Egg salad"};
 	double p[] = {9.35, 9.25, 5.35, 6.95, 3.95};
 
+	cout << "\tSANDWICHES" << endl << "\t**********" << endl;
+
 	for(int i = 0; i < 5; i++)
 	{
 		cout << i +1 <<")" << t[i] << "\t$" << p[i] << endl;
 	}
+
+	cout << endl << endl;
 }
 
 sandwich::sandwich()

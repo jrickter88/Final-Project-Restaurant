@@ -55,11 +55,14 @@ void appetizer::print() const
 	string t[] = {"Jalapeno sticks", "Mac and cheese bites", "Chicken Tenders", "Cup of Soup", "Bowl of soup"};
 	double p[] = {5.95, 5.95, 6.50, 2.50, 3.25};
 
+	cout << "\tAPPETIZERS" << endl << "\t**********" << endl;
+
 	for(int i = 0; i < 5; i++)
 	{
 		cout << i +1 <<")" << t[i] << "\t$" << p[i] << endl;
 	}
 
+	cout << endl << endl;
 }
 
 appetizer::appetizer()

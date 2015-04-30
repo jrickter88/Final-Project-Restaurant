@@ -55,10 +55,14 @@ void salad::print() const
 	string t[] = {"House salad", "Chef salad", "Chicken salad", "Cobb salad", "Tuna plate"};
 	double p[] = {3.59, 7.85, 6.95, 8.25, 5.95};
 
+	cout << "\tSALADS" << endl << "\t******" << endl;
+
 	for(int i = 0; i < 5; i++)
 	{
 		cout << i +1 <<")" << t[i] << "\t$" << p[i] << endl;
 	}
+	cout << endl << endl;
+
 }
 
 salad::salad()

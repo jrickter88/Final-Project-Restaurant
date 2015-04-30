@@ -55,10 +55,14 @@ void beverage::print() const
 	string t[] = {"Soft drinks", "Milk", "Juice", "Iced tea", "Coffee"};
 	double p[] = {1.95, 2.00, 2.50, 1.95, 1.75};
 
+	cout << "\tBEVERAGES" << endl << "\t*********" << endl;
+
 	for(int i = 0; i < 5; i++)
 	{
 		cout << i +1 <<")" << t[i] << "\t$" << p[i] << endl;
 	}
+	cout << endl << endl;
+
 }
 
 beverage::beverage()
