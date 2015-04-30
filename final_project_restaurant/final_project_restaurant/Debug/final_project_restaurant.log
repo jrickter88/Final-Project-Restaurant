@@ -1,0 +1,43 @@
+﻿Build started 4/27/2015 7:04:41 PM.
+     1>Project "M:\C++\final_project_restaurant\final_project_restaurant\final_project_restaurant.vcxproj" on node 2 (rebuild target(s)).
+     1>PrepareForBuild:
+         Creating directory "M:\C++\final_project_restaurant\Debug\".
+       InitializeBuildStatus:
+         Creating "Debug\final_project_restaurant.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt useBeverage.cpp useSalad.cpp
+         useSalad.cpp
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(4): error C2143: syntax error : missing ';' before 'using'
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(6): error C2653: 'salad' : is not a class or namespace name
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(14): error C2065: 'type' : undeclared identifier
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(15): error C2065: 'price' : undeclared identifier
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(18): error C2065: 'type' : undeclared identifier
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(19): error C2065: 'price' : undeclared identifier
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(22): error C2065: 'type' : undeclared identifier
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(23): error C2065: 'price' : undeclared identifier
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(26): error C2065: 'type' : undeclared identifier
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(27): error C2065: 'price' : undeclared identifier
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(30): error C2065: 'type' : undeclared identifier
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(31): error C2065: 'price' : undeclared identifier
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(34): error C2065: 'type' : undeclared identifier
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(35): error C2065: 'price' : undeclared identifier
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(42): error C2653: 'salad' : is not a class or namespace name
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(43): error C2270: 'getChoice' : modifiers not allowed on nonmember functions
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(44): error C2065: 'type' : undeclared identifier
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(47): error C2653: 'salad' : is not a class or namespace name
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(48): error C2270: 'getPrice' : modifiers not allowed on nonmember functions
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(49): error C2065: 'price' : undeclared identifier
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(52): error C2653: 'salad' : is not a class or namespace name
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(53): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(56): warning C4508: 'salad' : function should return a value; 'void' return type assumed
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(58): error C2653: 'salad' : is not a class or namespace name
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(59): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usesalad.cpp(61): warning C4508: 'salad' : function should return a value; 'void' return type assumed
+         useBeverage.cpp
+     1>m:\c++\final_project_restaurant\final_project_restaurant\usebeverage.cpp(4): error C2143: syntax error : missing ';' before 'using'
+         Generating Code...
+     1>Done Building Project "M:\C++\final_project_restaurant\final_project_restaurant\final_project_restaurant.vcxproj" (rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:04.40

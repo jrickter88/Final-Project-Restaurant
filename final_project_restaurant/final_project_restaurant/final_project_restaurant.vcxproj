@@ -61,9 +61,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="appetizer.h" />
+    <ClInclude Include="beverage.h" />
+    <ClInclude Include="salad.h" />
+    <ClInclude Include="sandwich.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="useAppetizer.cpp" />
+    <ClCompile Include="useBeverage.cpp" />
+    <ClCompile Include="useSalad.cpp" />
+    <ClCompile Include="useSandwich.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

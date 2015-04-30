@@ -1,5 +1,6 @@
 #include <string>
 #include "appetizer.h"
+#include <iostream>
 
 using namespace std;
 
@@ -47,6 +48,18 @@ string appetizer::getChoice() const
 double appetizer::getPrice() const
 {
 	return price;
+}
+
+void appetizer::print() const
+{
+	string t[] = {"Jalapeno sticks", "Mac and cheese bites", "Chicken Tenders", "Cup of Soup", "Bowl of soup"};
+	double p[] = {5.95, 5.95, 6.50, 2.50, 3.25};
+
+	for(int i = 0; i < 5; i++)
+	{
+		cout << i +1 <<")" << t[i] << "\t$" << p[i] << endl;
+	}
+
 }
 
 appetizer::appetizer()

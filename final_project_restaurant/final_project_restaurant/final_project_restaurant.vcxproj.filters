@@ -15,11 +15,29 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="beverage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="salad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sandwich.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="appetizer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="useBeverage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="useSalad.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="useSandwich.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="useAppetizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
