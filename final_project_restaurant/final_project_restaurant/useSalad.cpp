@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+#include <iomanip>
 #include "salad.h"
 
 using namespace std;
@@ -59,7 +60,8 @@ void salad::print() const
 
 	for(int i = 0; i < 5; i++)
 	{
-		cout << i +1 <<")" << t[i] << "\t$" << p[i] << endl;
+		cout << fixed << showpoint << setprecision(2);
+		cout << i +1 <<")" << t[i] << "\t\t$" << p[i] << endl;
 	}
 	cout << endl << endl;
 

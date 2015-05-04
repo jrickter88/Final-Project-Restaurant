@@ -1,6 +1,7 @@
 #include <string>
 #include "appetizer.h"
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -59,7 +60,13 @@ void appetizer::print() const
 
 	for(int i = 0; i < 5; i++)
 	{
-		cout << i +1 <<")" << t[i] << "\t$" << p[i] << endl;
+		cout << fixed << showpoint << setprecision(2);
+		if(i == 0 || i == 1 || i == 2)
+		{
+			cout << i +1 <<")" << t[i] << "\t$" << p[i] << endl;
+		}
+		else
+			cout << i +1 <<")" << t[i] << "\t\t$" << p[i] << endl;
 	}
 
 	cout << endl << endl;

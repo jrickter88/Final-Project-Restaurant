@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+#include <iomanip>
 #include "beverage.h"
 
 using namespace std;
@@ -59,7 +60,11 @@ void beverage::print() const
 
 	for(int i = 0; i < 5; i++)
 	{
-		cout << i +1 <<")" << t[i] << "\t$" << p[i] << endl;
+		cout << fixed << showpoint << setprecision(2);
+		if(i == 0 || i == 3 || i == 4)
+			cout << i +1 <<")" << t[i] << "\t\t$" << p[i] << endl;
+		else
+			cout << i +1 <<")" << t[i] << "\t\t\t$" << p[i] << endl;
 	}
 	cout << endl << endl;
 
