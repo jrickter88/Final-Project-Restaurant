@@ -16,6 +16,7 @@ int chooseApp(appetizer);
 int chooseBeverage(beverage);
 int chooseSandwich(sandwich);
 int chooseSalad(salad);
+int dininingChoice();
 
 int main()
 {
@@ -29,6 +30,7 @@ int main()
 	salad* yourSalads;
 	sandwich* yourSandwiches;
 	//***************declare neccessary variables
+	int inOrOut = 0;
 	int appChoice = -1;
 	int bevChoice = -1;
 	int saladChoice = -1;
@@ -44,6 +46,9 @@ int main()
 	double billTotalDue = 0;
 
 	cout << fixed << showpoint << setprecision(2);
+	//************************dine in or carry-out
+	inOrOut = diningChoice();
+
 	//*********************display menu
 	printMenu(myBeverage, myApp, mySalad, mySandwich);
 
@@ -109,7 +114,10 @@ int main()
 	}
 
 	billTotalDue = appTotalDue + bevTotalDue + saladTotalDue + sandwichTotalDue;
-	billTotalDue = billTotalDue * 1.2;
+
+	if(inOrOut == 1)
+		billTotalDue = billTotalDue * 1.2;
+	
 	cout << billTotalDue << "********************************bill total";
 
 	system("pause");
@@ -117,7 +125,24 @@ int main()
 }
 //*******************************end main*******************************************************************
 //					*******************************
+//*************************************dine in or carry out
+int diningChoice()
+{
+	int choice = 0;
 
+	do
+	{
+		cout << "Will this be 1) dine in or 2) carry-out?" << endl;
+		cin >> choice;
+
+		if(choice < 1 || choice > 2)
+		{
+			cout << "That is not a valid option.  Please select 1 or 2" << endl;
+		}
+	}while(choice < 1 || choice > 2);
+
+	return choice;
+}
 void printMenu(beverage, appetizer, salad, sandwich)
 {
 	beverage myBeverage;
