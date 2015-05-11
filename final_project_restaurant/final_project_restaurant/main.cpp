@@ -6,7 +6,7 @@
 #include "appetizer.h"
 
 using namespace std;
-
+//prototype functions
 void printMenu(beverage, appetizer, salad, sandwich);
 int getNumApp();
 int getNumBev();
@@ -102,7 +102,7 @@ int main()
 		//*********************sandwich section
 	numSandwich = getNumSandwich();
 	yourSandwiches = new sandwich[numSandwich];
-
+	//ordering sandwiches loop
 	for(int i = 0; i < numBev; i++)
 	{
 		sandwichChoice = chooseSandwich(mySandwich);
@@ -112,9 +112,11 @@ int main()
 		system("cls");
 
 	}
-
+	//Calculate the bill total
 	billTotalDue = appTotalDue + bevTotalDue + saladTotalDue + sandwichTotalDue;
-
+	//Add tax
+	billTotalDue = billTotalDue * 1.06;
+	//Add gratuity if dining in.
 	if(inOrOut == 1)
 		billTotalDue = billTotalDue * 1.2;
 	
