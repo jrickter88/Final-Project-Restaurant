@@ -16,7 +16,7 @@ int chooseApp(appetizer);
 int chooseBeverage(beverage);
 int chooseSandwich(sandwich);
 int chooseSalad(salad);
-int dininingChoice();
+int diningChoice();
 
 int main()
 {
@@ -131,20 +131,38 @@ int main()
 int diningChoice()
 {
 	int choice = 0;
+	string error = "Program is in a fail state";
 
-	do
-	{
-		cout << "Will this be 1) dine in or 2) carry-out?" << endl;
-		cin >> choice;
-
-		if(choice < 1 || choice > 2)
-		{
-			cout << "That is not a valid option.  Please select 1 or 2" << endl;
+	do{
+		try
+			{
+				cout << "Will this be 1) dine in or 2) carry-out?" << endl;
+				cin >> choice;
+		
+				if (cin.fail()) 
+					throw error;
+				else if(choice < 1 || choice > 2)
+					throw choice;
+				
+			}
+		catch (int e)
+			{
+				cout << "Exeption occured " << e << " is not a valid choice" << endl;
+			}
+		catch (string e)
+			{
+				cout << e << " please enter a number" << endl;
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				
+				
+			}
 		}
-	}while(choice < 1 || choice > 2);
-
+	while(choice < 1 || choice > 2 || !cin);
 	return choice;
+			
 }
+
 void printMenu(beverage, appetizer, salad, sandwich)
 {
 	beverage myBeverage;
@@ -169,13 +187,29 @@ void printMenu(beverage, appetizer, salad, sandwich)
 int getNumApp()
 {
 	int numApps;
+	string error = "Program is in a fail state";
 	do
 	{
+		try
+		{
 		cout << "How many appetizers do you plan on ordering?" << endl;
 		cin >> numApps;
-		if(numApps < 0)
-			cout << "That's an impossibility.  Please enter a non-negative number" << endl;
-	}while(numApps < 0);
+		if(cin.fail())
+			throw error;
+		else if(numApps < 0)
+			throw numApps;
+		}
+		catch (int e)
+		{
+			cout << "Error occured " << e << " is not a valid choice" << endl;
+		}
+		catch (string e)
+		{
+			cout << e << " please enter a number" << endl;
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		}
+	}while(numApps < 0 || !cin);
 
 	return numApps;
 }
@@ -236,12 +270,28 @@ int chooseApp(appetizer)
 int getNumBev()
 {
 	int numBev;
+	string error = "Program is in a fail state";
 	do
 	{
-		cout << "How many beverages do you plan on ordering?" << endl;
+		try
+		{
+		cout << "How many appetizers do you plan on ordering?" << endl;
 		cin >> numBev;
-		if(numBev < 0)
-			cout << "That's an impossibility.  Please enter a non-negative number" << endl;
+		if(cin.fail())
+			throw error;
+		else if(numBev < 0)
+			throw numBev;
+		}
+		catch (int e)
+		{
+			cout << "Error occured " << e << " is not a valid choice" << endl;
+		}
+		catch (string e)
+		{
+			cout << e << " please enter a number" << endl;
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		}
 	}while(numBev < 0);
 
 	return numBev;
@@ -303,12 +353,30 @@ int chooseBeverage(beverage)
 int getNumSalad()
 {
 	int numSalad;
+	string error = "Program is in a fail state";
 	do
 	{
-		cout << "How many salads do you plan on ordering?" << endl;
-		cin >> numSalad;
-		if(numSalad < 0)
-			cout << "That's an impossibility.  Please enter a non-negative number" << endl;
+		try
+		{
+			cout << "How many appetizers do you plan on ordering?" << endl;
+			cin >> numSalad;
+			
+			if(cin.fail())
+				throw error;
+			
+			else if(numSalad < 0)
+				throw numSalad;
+		}
+		catch (int e)
+		{
+			cout << "Error occured " << e << " is not a valid choice" << endl;
+		}
+		catch (string e)
+		{
+			cout << e << " please enter a number" << endl;
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		}
 	}while(numSalad < 0);
 
 	return numSalad;
@@ -371,13 +439,32 @@ int chooseSalad(salad)
 int getNumSandwich()
 {
 	int numSandwich;
+	string error = "Program is in a fail state";
 	do
 	{
-		cout << "How many sandwiches do you plan on ordering?" << endl;
-		cin >> numSandwich;
-		if(numSandwich < 0)
-			cout << "That's an impossibility.  Please enter a non-negative number" << endl;
+		try
+		{
+			cout << "How many appetizers do you plan on ordering?" << endl;
+			cin >> numSandwich;
+			
+			if(cin.fail())
+				throw error;
+			
+			else if(numSandwich < 0)
+				throw numSandwich;
+		}
+		catch (int e)
+		{
+			cout << "Error occured " << e << " is not a valid choice" << endl;
+		}
+		catch (string e)
+		{
+			cout << e << " please enter a number" << endl;
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		}
 	}while(numSandwich < 0);
+
 
 	return numSandwich;
 }

@@ -1,12 +1,18 @@
-﻿Build started 5/4/2015 3:31:55 PM.
+﻿Build started 5/13/2015 5:47:14 PM.
      1>Project "C:\Users\Home\Desktop\C++\GitHub\Final-Project-Restaurant\final_project_restaurant\final_project_restaurant\final_project_restaurant.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\final_project_restaurant.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt useBeverage.cpp useSalad.cpp
-         useSalad.cpp
-         useBeverage.cpp
-         Generating Code...
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\users\home\desktop\c++\github\final-project-restaurant\final_project_restaurant\final_project_restaurant\main.cpp(222): warning C4101: 'choice' : unreferenced local variable
+     1>c:\users\home\desktop\c++\github\final-project-restaurant\final_project_restaurant\final_project_restaurant\main.cpp(305): warning C4101: 'choice' : unreferenced local variable
+     1>c:\users\home\desktop\c++\github\final-project-restaurant\final_project_restaurant\final_project_restaurant\main.cpp(390): warning C4101: 'choice' : unreferenced local variable
+     1>c:\users\home\desktop\c++\github\final-project-restaurant\final_project_restaurant\final_project_restaurant\main.cpp(477): warning C4101: 'choice' : unreferenced local variable
+     1>c:\users\home\desktop\c++\github\final-project-restaurant\final_project_restaurant\final_project_restaurant\main.cpp(266): warning C4715: 'chooseApp' : not all control paths return a value
+     1>c:\users\home\desktop\c++\github\final-project-restaurant\final_project_restaurant\final_project_restaurant\main.cpp(347): warning C4715: 'chooseBeverage' : not all control paths return a value
+     1>c:\users\home\desktop\c++\github\final-project-restaurant\final_project_restaurant\final_project_restaurant\main.cpp(432): warning C4715: 'chooseSalad' : not all control paths return a value
+     1>c:\users\home\desktop\c++\github\final-project-restaurant\final_project_restaurant\final_project_restaurant\main.cpp(519): warning C4715: 'chooseSandwich' : not all control paths return a value
        Link:
          c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Home\Desktop\C++\GitHub\Final-Project-Restaurant\final_project_restaurant\Debug\final_project_restaurant.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\final_project_restaurant.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Home\Desktop\C++\GitHub\Final-Project-Restaurant\final_project_restaurant\Debug\final_project_restaurant.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Home\Desktop\C++\GitHub\Final-Project-Restaurant\final_project_restaurant\Debug\final_project_restaurant.lib" /MACHINE:X86 Debug\main.obj
          Debug\useAppetizer.obj
@@ -24,4 +30,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.28
+Time Elapsed 00:00:01.04
