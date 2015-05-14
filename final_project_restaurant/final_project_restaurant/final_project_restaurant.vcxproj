@@ -62,6 +62,8 @@
   <ItemGroup>
     <ClInclude Include="appetizer.h" />
     <ClInclude Include="beverage.h" />
+    <ClInclude Include="exception.h" />
+    <ClInclude Include="invalidNum.h" />
     <ClInclude Include="salad.h" />
     <ClInclude Include="sandwich.h" />
   </ItemGroup>

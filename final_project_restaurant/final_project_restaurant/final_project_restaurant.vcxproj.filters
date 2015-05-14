@@ -27,6 +27,12 @@
     <ClInclude Include="appetizer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="exception.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="invalidNum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="useBeverage.cpp">

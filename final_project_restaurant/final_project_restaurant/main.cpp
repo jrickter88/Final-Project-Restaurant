@@ -4,6 +4,8 @@
 #include "beverage.h"
 #include "sandwich.h"
 #include "appetizer.h"
+#include "exception.h"
+#include "invalidNum.h"
 
 using namespace std;
 //prototype functions
@@ -131,7 +133,7 @@ int main()
 int diningChoice()
 {
 	int choice = 0;
-	string error = "Program is in a fail state";
+	
 
 	do{
 		try
@@ -140,23 +142,22 @@ int diningChoice()
 				cin >> choice;
 		
 				if (cin.fail()) 
-					throw error;
+					throw notANum();
 				else if(choice < 1 || choice > 2)
-					throw choice;
+					throw invalidNum();
 				
 			}
-		catch (int e)
+		catch (notANum errorObj)
 			{
-				cout << "Exeption occured " << e << " is not a valid choice" << endl;
-			}
-		catch (string e)
-			{
-				cout << e << " please enter a number" << endl;
+				cout << errorObj.what() << endl;
 				cin.clear();
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
-				
-				
+				cin.ignore();
 			}
+		catch (invalidNum errorObj)
+		{
+			cout << errorObj.what() << endl;
+		}
+				
 		}
 	while(choice < 1 || choice > 2 || !cin);
 	return choice;
@@ -187,7 +188,6 @@ void printMenu(beverage, appetizer, salad, sandwich)
 int getNumApp()
 {
 	int numApps;
-	string error = "Program is in a fail state";
 	do
 	{
 		try
@@ -195,22 +195,28 @@ int getNumApp()
 		cout << "How many appetizers do you plan on ordering?" << endl;
 		cin >> numApps;
 		if(cin.fail())
-			throw error;
+			throw notANum();
 		else if(numApps < 0)
-			throw numApps;
+			throw invalidNum();
 		}
-		catch (int e)
+		catch (invalidNum errorObj)
 		{
-			cout << "Error occured " << e << " is not a valid choice" << endl;
+			cout << errorObj.what() << endl;
+			system ("pause");
+			system ("cls");
 		}
-		catch (string e)
+		catch (notANum errorObj)
 		{
-			cout << e << " please enter a number" << endl;
+			cout << errorObj.what() << endl;
 			cin.clear();
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cin.ignore();
+			system ("pause");
+			system ("cls");
 		}
-	}while(numApps < 0 || !cin);
-
+	}while(numApps < 0);
+	
+	system("cls");
+	
 	return numApps;
 }
 
@@ -228,8 +234,30 @@ int chooseApp(appetizer)
 //				system("cls");
 				cout << "Excellent.  Please select your choice by number. (1 - 5)" << endl;
 				myApp.print();
-
-				cin >> appChoice;
+				try
+				{
+					cin >> appChoice;
+					
+					if (cin.fail())
+						throw notANum();
+					if (appChoice != 1 && appChoice != 2 && appChoice != 3 && appChoice != 4 && appChoice != 5)
+						throw invalidNum();
+				}
+				catch (notANum errorObj)
+				{
+					cout << errorObj.what() << endl;
+					cin.clear();
+					cin.ignore();
+					system ("pause");
+					system ("cls");
+				}
+				catch (invalidNum errorObj)
+				{
+					cout << errorObj.what() << endl 
+						 <<"You must enter a number between 1 and 5. Try again." << endl;
+					system ("pause");
+					system ("cls");
+				}
 
 				if(appChoice == 1 || appChoice == 2 || appChoice == 3 || appChoice == 4 || appChoice == 5)
 				{
@@ -256,8 +284,8 @@ int chooseApp(appetizer)
 				}
 				else
 				{
-					cout << "I'm sorry, that's not a valid option.  Please choose a number from 1 to 5" << endl;
 					system("pause");
+					system("cls");
 				}
 
 			}while(appChoice != 1 || appChoice != 2 || appChoice != 3 || appChoice != 4 || appChoice != 5);
@@ -270,29 +298,41 @@ int chooseApp(appetizer)
 int getNumBev()
 {
 	int numBev;
-	string error = "Program is in a fail state";
+	
 	do
 	{
 		try
 		{
-		cout << "How many appetizers do you plan on ordering?" << endl;
+		cout << "How many drinks do you plan on ordering?" << endl;
+		
 		cin >> numBev;
+		
 		if(cin.fail())
-			throw error;
+			throw notANum();
+		
 		else if(numBev < 0)
-			throw numBev;
+			throw invalidNum();
 		}
-		catch (int e)
+		
+		catch (notANum errorObj)
 		{
-			cout << "Error occured " << e << " is not a valid choice" << endl;
-		}
-		catch (string e)
-		{
-			cout << e << " please enter a number" << endl;
+			cout << errorObj.what() << endl;
 			cin.clear();
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cin.ignore();
+			system ("pause");
+			system ("cls");
 		}
+		
+		catch (invalidNum errorObj)
+		{
+			cout << errorObj.what() << endl;
+			system ("pause");
+			system ("cls");
+		}
+				
 	}while(numBev < 0);
+
+	system("cls");
 
 	return numBev;
 }
@@ -312,7 +352,30 @@ int chooseBeverage(beverage)
 				cout << "Excellent.  Please select your choice by number. (1 - 5)" << endl;
 				myBev.print();
 
-				cin >> bevChoice;
+				try
+				{
+					cin >> bevChoice;
+					
+					if (cin.fail())
+						throw notANum();
+					if (bevChoice != 1 && bevChoice != 2 && bevChoice != 3 && bevChoice != 4 && bevChoice != 5)
+						throw invalidNum();
+				}
+				catch (notANum errorObj)
+				{
+					cout << errorObj.what() << endl;
+					cin.clear();
+					cin.ignore();
+					system ("pause");
+					system ("cls");
+				}
+				catch (invalidNum errorObj)
+				{
+					cout << errorObj.what() << endl 
+						 <<"You must enter a number between 1 and 5. Try again." << endl;
+					system ("pause");
+					system ("cls");
+				}
 
 				if(bevChoice == 1 || bevChoice == 2 || bevChoice == 3 || bevChoice == 4 || bevChoice == 5)
 				{
@@ -339,8 +402,9 @@ int chooseBeverage(beverage)
 				}
 				else
 				{
-					cout << "I'm sorry, that's not a valid option.  Please choose a number from 1 to 5" << endl;
+	
 					system("pause");
+					system("cls");
 				}
 
 			}while(bevChoice != 1 || bevChoice != 2 || bevChoice != 3 || bevChoice != 4 || bevChoice != 5);
@@ -353,31 +417,35 @@ int chooseBeverage(beverage)
 int getNumSalad()
 {
 	int numSalad;
-	string error = "Program is in a fail state";
+	
 	do
 	{
 		try
 		{
-			cout << "How many appetizers do you plan on ordering?" << endl;
+			cout << "How many salads do you plan on ordering?" << endl;
 			cin >> numSalad;
-			
-			if(cin.fail())
-				throw error;
-			
-			else if(numSalad < 0)
-				throw numSalad;
+		if(cin.fail())
+			throw notANum();
+		else if(numSalad < 0)
+			throw invalidNum();
 		}
-		catch (int e)
+		catch (invalidNum errorObj)
 		{
-			cout << "Error occured " << e << " is not a valid choice" << endl;
+			cout << errorObj.what() << endl;
+			system ("pause");
+			system ("cls");
 		}
-		catch (string e)
+		catch (notANum errorObj)
 		{
-			cout << e << " please enter a number" << endl;
+			cout << errorObj.what() << endl;
 			cin.clear();
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cin.ignore();
+			system ("pause");
+			system ("cls");
 		}
 	}while(numSalad < 0);
+
+	system("cls");
 
 	return numSalad;
 }
@@ -397,7 +465,30 @@ int chooseSalad(salad)
 				cout << "Excellent.  Please select your choice by number. (1 - 5)" << endl;
 				mySalad.print();
 
-				cin >> saladChoice;
+				try
+				{
+					cin >> saladChoice;
+					
+					if (cin.fail())
+						throw notANum();
+					if (saladChoice != 1 && saladChoice != 2 && saladChoice != 3 && saladChoice != 4 && saladChoice != 5)
+						throw invalidNum();
+				}
+				catch (notANum errorObj)
+				{
+					cout << errorObj.what() << endl;
+					cin.clear();
+					cin.ignore();
+					system ("pause");
+					system ("cls");
+				}
+				catch (invalidNum errorObj)
+				{
+					cout << errorObj.what() << endl 
+						 <<"You must enter a number between 1 and 5. Try again." << endl;
+					system ("pause");
+					system ("cls");
+				}
 
 				if(saladChoice == 1 || saladChoice == 2 || saladChoice == 3 || saladChoice == 4 || saladChoice == 5)
 				{
@@ -424,8 +515,8 @@ int chooseSalad(salad)
 				}
 				else
 				{
-					cout << "I'm sorry, that's not a valid option.  Please choose a number from 1 to 5" << endl;
 					system("pause");
+					system("cls");
 				}
 
 			}while(saladChoice != 1 || saladChoice != 2 || saladChoice != 3 || saladChoice != 4 || saladChoice != 5);
@@ -439,32 +530,35 @@ int chooseSalad(salad)
 int getNumSandwich()
 {
 	int numSandwich;
-	string error = "Program is in a fail state";
+	
 	do
 	{
 		try
 		{
-			cout << "How many appetizers do you plan on ordering?" << endl;
-			cin >> numSandwich;
-			
-			if(cin.fail())
-				throw error;
-			
-			else if(numSandwich < 0)
-				throw numSandwich;
+		cout << "How many sandwiches do you plan on ordering?" << endl;
+		cin >> numSandwich;
+		if(cin.fail())
+			throw notANum();
+		else if(numSandwich < 0)
+			throw invalidNum();
 		}
-		catch (int e)
+		catch (invalidNum errorObj)
 		{
-			cout << "Error occured " << e << " is not a valid choice" << endl;
+			cout << errorObj.what() << endl;
+			system ("pause");
+			system ("cls");
 		}
-		catch (string e)
+		catch (notANum errorObj)
 		{
-			cout << e << " please enter a number" << endl;
+			cout << errorObj.what() << endl;
 			cin.clear();
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cin.ignore();
+			system ("pause");
+			system ("cls");
 		}
 	}while(numSandwich < 0);
 
+	system("cls");
 
 	return numSandwich;
 }
@@ -484,7 +578,30 @@ int chooseSandwich(sandwich)
 				cout << "Excellent.  Please select your choice by number. (1 - 5)" << endl;
 				mySandwich.print();
 
-				cin >> sandwichChoice;
+				try
+				{
+					cin >> sandwichChoice;
+					
+					if (cin.fail())
+						throw notANum();
+					if (sandwichChoice != 1 && sandwichChoice != 2 && sandwichChoice != 3 && sandwichChoice != 4 && sandwichChoice != 5)
+						throw invalidNum();
+				}
+				catch (notANum errorObj)
+				{
+					cout << errorObj.what() << endl;
+					cin.clear();
+					cin.ignore();
+					system ("pause");
+					system ("cls");
+				}
+				catch (invalidNum errorObj)
+				{
+					cout << errorObj.what() << endl 
+						 <<"You must enter a number between 1 and 5. Try again." << endl;
+					system ("pause");
+					system ("cls");
+				}
 
 				if(sandwichChoice == 1 || sandwichChoice == 2 || sandwichChoice == 3 || sandwichChoice == 4 || sandwichChoice == 5)
 				{
@@ -511,8 +628,8 @@ int chooseSandwich(sandwich)
 				}
 				else
 				{
-					cout << "I'm sorry, that's not a valid option.  Please choose a number from 1 to 5" << endl;
 					system("pause");
+					system("cls");
 				}
 
 			}while(sandwichChoice != 1 || sandwichChoice != 2 || sandwichChoice != 3 || sandwichChoice != 4 || sandwichChoice != 5);
