@@ -125,8 +125,14 @@ int main()
 	//Add gratuity if dining in.
 	if(inOrOut == 1)
 		billTotalDue = billTotalDue * 1.2;
+	system("color A");
 	
-	cout << billTotalDue << "\n********************************bill total********************************";
+	cout << "Choices " << "\n";
+	cout << "Appetizers " << appTotalDue << "\n";
+	cout << "Beverages " << bevTotalDue << "\n";
+	cout << "Salads " << saladTotalDue << "\n";
+	cout << "Sandwiches " << sandwichTotalDue << "\n";
+	cout << "\n********************************bill total********************************\n" << "$" << billTotalDue;
 	
 	ofstream ofs;
     	ofs.open ("receipt.txt");
@@ -163,7 +169,8 @@ int diningChoice()
 	do{
 		try
 			{
-				cout << "Will this be 1) dine in or 2) carry-out?" << endl;
+				system("color C");
+				cout << "Will this be: \n1) Dine in \nOr \n2) Carry-out?" << endl;
 				cin >> choice;
 		
 				if (cin.fail()) 
