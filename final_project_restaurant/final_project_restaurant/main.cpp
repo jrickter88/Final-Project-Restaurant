@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 #include "salad.h"
 #include "beverage.h"
 #include "sandwich.h"
@@ -71,8 +72,9 @@ int main()
 
 	}
 
-	system("pause");
+
 	
+	myBeverage.print();
 	//****************beverage section
 	numBev = getNumBev();
 	yourBeverages = new beverage[numBev];
@@ -87,6 +89,7 @@ int main()
 
 	}
 
+	mySalad.print();
 	//*********************salad section
 	numSalad = getNumSalad();
 	yourSalads = new salad[numSalad];
@@ -100,7 +103,8 @@ int main()
 		system("cls");
 
 	}
-
+	
+	mySandwich.print();
 		//*********************sandwich section
 	numSandwich = getNumSandwich();
 	yourSandwiches = new sandwich[numSandwich];
@@ -122,7 +126,28 @@ int main()
 	if(inOrOut == 1)
 		billTotalDue = billTotalDue * 1.2;
 	
-	cout << billTotalDue << "********************************bill total";
+	cout << billTotalDue << "\n********************************bill total********************************";
+	
+	ofstream ofs;
+    	ofs.open ("receipt.txt");
+
+    	if (ofs.is_open())
+    	{
+		ofs << "Your total bill" << "\n";
+		ofs << "Appetizers " << appTotalDue << "\n";
+		ofs << "Beverages " << bevTotalDue << "\n";
+		ofs << "Salads " << saladTotalDue << "\n";
+		ofs << "Sandwiches " << sandwichTotalDue << "\n";
+		ofs << fixed << showpoint << setprecision(2);
+		ofs << "Your total bill comes out to " << billTotalDue << "\n";
+		std::cout << "\nYour receipt is saved to Receipt.txt\n";
+		ofs.close();
+	}
+	else
+
+    {
+	  std::cout << "Error opening file";
+    }
 
 	system("pause");
 	return 0;
