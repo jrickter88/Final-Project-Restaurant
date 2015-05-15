@@ -134,12 +134,12 @@ int main()
     	if (ofs.is_open())
     	{
 		ofs << "Your total bill" << "\n";
-		ofs << "Appetizers " << appTotalDue << "\n";
-		ofs << "Beverages " << bevTotalDue << "\n";
-		ofs << "Salads " << saladTotalDue << "\n";
-		ofs << "Sandwiches " << sandwichTotalDue << "\n";
+		ofs << "Appetizers $" << appTotalDue << "\n";
+		ofs << "Beverages $" << bevTotalDue << "\n";
+		ofs << "Salads $" << saladTotalDue << "\n";
+		ofs << "Sandwiches $" << sandwichTotalDue << "\n";
 		ofs << fixed << showpoint << setprecision(2);
-		ofs << "Your total bill comes out to " << billTotalDue << "\n";
+		ofs << "Your total bill comes out to $" << billTotalDue << "\n";
 		std::cout << "\nYour receipt is saved to Receipt.txt\n";
 		ofs.close();
 	}
